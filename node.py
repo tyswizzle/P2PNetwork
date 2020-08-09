@@ -374,7 +374,7 @@ def host_console(name, n):
          sg.Button('Disconnect')]
     ]
 
-    hel = sg.Window('Pee2pee', layout)
+    hel = sg.Window('Pee2pee', layout, icon=logo)
     while True:
 
         event, values = hel.read(timeout=3000)
