@@ -366,7 +366,7 @@ def host_console(name, n):
     sg.theme('Default1')
 
     layout = [
-        [sg.Listbox(files.get_file_names(), size=(50, 10), key='list')],
+        [sg.Listbox(files.get_file_names(), size=(60, 10), key='list')],
         [sg.Button('Add File'),
          sg.Button('Update File'),
          sg.Button('Delete File'),
@@ -604,7 +604,7 @@ def client_console(s, n):  # the main driver for client actions
     sg.theme('Default1')
 
     layout = [
-        [sg.Listbox(files.get_file_names(), size=(50, 10), key='list')],
+        [sg.Listbox(files.get_file_names(), size=(60, 10), key='list')],
         [sg.Button('Add File'),
          sg.Button('Update File'),
          sg.Button('Delete File'),
