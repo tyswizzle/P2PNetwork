@@ -2,8 +2,6 @@ import socket
 import sys
 import time
 import threading
-import random
-import hashlib
 import uuid
 import os
 from os import listdir
@@ -11,9 +9,12 @@ from os.path import isfile, join
 import file
 import files
 import PySimpleGUI as sg
-import json
 import shutil
 import errno
+import logo
+import base64
+
+logo = base64.b64decode(logo.logo)
 
 HOST = '192.168.2.151'
 PORT = 8000
@@ -441,6 +442,14 @@ def host_close_connection():
 
 
 ################################################################################
+
+
+def client_node(n):  # creates the client socket and connects, then returns the socket
+    s = socket.socket()
+    s.connect((n.host, n.port))
+    print("Connected to %s" % str(s.getpeername()))
+    return s
+
 
 def client_listen(name, sock,
                   n):  # the listener-thread, which receives messages from the host and calls the correct function.
